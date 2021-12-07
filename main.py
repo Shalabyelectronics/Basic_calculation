@@ -1,23 +1,25 @@
 from tkinter import *
 from tkinter import ttk
 
-# ------------Day 1--------------------#
-# create a normal calculator
+# create a Basic calculator
 root = Tk()
-# root.minsize(width=300, height=300)
-# root.geometry("300x300+700+200")
 root.resizable(False, False)
 root.title("Basic calculator.")
-my_tabs = ttk.Notebook(root)
+# -----------------Global variable---------#
 total = 0
 number = "0"
+
+# ---------------- Add a frame layer ------------#
 frame_1 = Frame(root).grid(column=0, row=0, columnspan=3)
 
-entry = Entry(frame_1, width=45, cursor="arrow", justify="left", exportselection=False, borderwidth=5)
+# -------------Create an entry field
+
+entry = Entry(frame_1, width=45, borderwidth=5)
 entry.grid(column=0, row=0, columnspan=3, pady=10, padx=5)
 entry.insert(0, "0")
 
 
+# ----------- When numbers button clicked
 def number_clicked(num):
     global number
     entry.delete(0, END)
@@ -30,6 +32,7 @@ def number_clicked(num):
         entry.insert(0, number)
 
 
+# ----------- Here the addition operator
 def add_numbers():
     global total, number
     try:
@@ -45,15 +48,14 @@ def add_numbers():
         entry.insert(0, "0")
 
 
-
-
+# ------------ Here return the total from your addition .
 def total_addition():
     global total
     add_numbers()
     entry.delete(0, END)
     entry.insert(0, str(total))
 
-
+# ------------Clear the calculator
 def clear_entry():
     global total, number
     total = 0
@@ -96,10 +98,11 @@ number_0_b.grid(column=1, row=4, pady=3)
 
 add_button_b = Button(frame_1, text="+", width=10, height=2, command=add_numbers)
 add_button_b.grid(column=0, row=4, pady=3)
+
 clear_b = Button(frame_1, text="Clear", width=10, height=2, command=clear_entry)
 clear_b.grid(column=2, row=4, pady=3)
+
 equal_button_b = Button(frame_1, text="=", width=38, height=2, command=total_addition)
 equal_button_b.grid(column=0, row=5, columnspan=3, pady=3)
 
 root.mainloop()
-
