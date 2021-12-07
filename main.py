@@ -102,38 +102,4 @@ equal_button_b = Button(frame_1, text="=", width=38, height=2, command=total_add
 equal_button_b.grid(column=0, row=5, columnspan=3, pady=3)
 
 root.mainloop()
-# ----------Later
-# window = Tk()
-# window.title("E-mail Automation V1.0")
-# # ----Adjust where your window will appear.
-# window.geometry('600x500+600+200')
-# window.minsize(width=700, height=500)
-# # ----------Do not let user to resize the window.
-# window.resizable(False, False)
-# # ------------Create the tabs from Network class from ttk module.
-# my_notebook = ttk.Notebook(window)
-# my_notebook.grid(column=0, row=0, columnspan=3)
-#
-#
-# # -----------My question is do I can mix between pack and grid? The answer was just one layout system.
-#
-# def return_tab():
-#     my_notebook.select(0)
-#
-#
-# def select():
-#     my_notebook.select(1)
-#     window.after(1000, return_tab)
-#
-#
-# my_frame1 = Frame(my_notebook, width=700, height=500, bg="blue")
-# my_frame2 = Frame(my_notebook, width=700, height=500, bg="red")
-#
-# my_notebook.add(my_frame1, text="My blue tab")
-# my_notebook.add(my_frame2, text="My red tab")
-#
-# blue_button = Button(my_frame1, text="Click me", command=select).grid(column=0, row=2)
-#
-# red_button = Button(my_frame2, text="Click me").grid(column=1, row=3)
-#
-# window.mainloop()
+
